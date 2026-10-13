@@ -5,67 +5,69 @@ const ORDERS_URL = "google.com";   // Google Apps Script web app URL (used by th
 
 // img = photo file inside the "images" folder. Remove or leave out img to show the emoji instead.
 const MENU = [
-  {id:20,n:"Jollof Rice",e:"🍛",img:"Imgs/jollofrice.png",p:30,c:"Main",d:"Smoky party-style jollof rice, served hot."},
-{id:21,n:"Jollof & Chicken",e:"🍗",img:"Imgs/jollofandchicken.png",p:40,c:"Main",d:"Smoky jollof rice with a juicy piece of fried chicken."},
-{id:22,n:"Jollof & Beef",e:"🥩",img:"Imgs/jollofandbeef.png",p:45,c:"Main",d:"Smoky jollof rice with tender, spiced beef."},
-{id:23,n:"Jollof & Goat Meat",e:"🍛",img:"Imgs/jollofandgoat.png",p:50,c:"Main",d:"Smoky jollof rice with peppered goat meat."},
-{id:24,n:"Jollof & Turkey",e:"🦃",img:"Imgs/jollofandturkey.png",p:55,c:"Main",d:"Smoky jollof rice with a large piece of grilled turkey."},
-{id:25,n:"Egusi & Fufu",e:"🍲",img:"Imgs/egusinfufu.jpeg",p:40,c:"Main",d:"Rich melon seed soup with smooth, soft fufu."},
-{id:26,n:"Okro Soup",e:"🥣",img:"Imgs/okro.jpeg",p:40,c:"Main",d:"Thick, flavorful okro soup with assorted meat and fish."},
+  // Earlier jollof/soup items
+{id:20,n:"Jollof Rice",e:"🍛",img:"Imgs/jollofrice.png",p:6.5,c:"Fast Food",d:"Smoky party-style jollof rice, served hot."},
+{id:21,n:"Jollof & Chicken",e:"🍗",img:"Imgs/jollofandchicken.png",p:9.5,c:"Fast Food",d:"Smoky jollof rice with a juicy piece of fried chicken."},
+{id:22,n:"Jollof & Beef",e:"🥩",img:"Imgs/jollofandbeef.png",p:9.5,c:"Fast Food",d:"Smoky jollof rice with tender, spiced beef."},
+{id:23,n:"Jollof & Goat Meat",e:"🍛",img:"Imgs/jollofandgoat.png",p:10.5,c:"Fast Food",d:"Smoky jollof rice with peppered goat meat."},
+{id:24,n:"Jollof & Turkey",e:"🦃",img:"Imgs/jollofandturkey.png",p:11.5,c:"Fast Food",d:"Smoky jollof rice with a large piece of grilled turkey."},
+{id:25,n:"Egusi & Fufu",e:"🍲",img:"Imgs/egusinfufu.jpeg",p:9.5,c:"Fast Food",d:"Rich melon seed soup with smooth, soft fufu."},
+{id:26,n:"Okro Soup",e:"🥣",img:"Imgs/okro.jpeg",p:8.5,c:"Fast Food",d:"Thick, flavorful okro soup with assorted meat and fish."},
 
-  // Breakfast (Frühstück)
-{id:30,n:"Cafe Latte",e:"☕",img:"Images/cafelatte.jpg",p:3,c:"Breakfast",d:"Smooth espresso with steamed milk."},
-{id:31,n:"Melange",e:"☕",img:"Images/melange.jpg",p:3,c:"Breakfast",d:"Viennese-style coffee with frothed milk."},
-{id:32,n:"Tea (Various)",e:"🍵",img:"Images/tea.jpg",p:2,c:"Breakfast",d:"Hot tea, choose from different varieties."},
-{id:33,n:"Tea (Milk & Milo)",e:"🥛",img:"Images/milotea.jpg",p:2.5,c:"Breakfast",d:"Creamy tea with milk and Milo."},
-{id:34,n:"Meat Pie",e:"🥧",img:"Images/meatpie.jpg",p:4.5,c:"Breakfast",d:"Flaky pastry filled with spiced minced meat."},
-{id:35,n:"Chicken Pie",e:"🥧",img:"Images/chickenpie.jpg",p:4.5,c:"Breakfast",d:"Flaky pastry filled with seasoned chicken."},
-{id:36,n:"Sandwich",e:"🥪",img:"Images/sandwich.jpg",p:3,c:"Breakfast",d:"Freshly made sandwich."},
-{id:37,n:"Croissant",e:"🥐",img:"Images/croissant.jpg",p:3,c:"Breakfast",d:"Buttery, golden croissant."},
-{id:38,n:"Egg Roll",e:"🥚",img:"Images/eggroll.jpg",p:4.5,c:"Breakfast",d:"Boiled egg wrapped in soft golden dough."},
-{id:39,n:"Fish Roll",e:"🐟",img:"Images/fishroll.jpg",p:3,c:"Breakfast",d:"Crispy pastry filled with seasoned fish."},
+// Breakfast
+{id:30,n:"Cafe Latte",e:"☕",img:"Imgs/cafelatte.png",p:3,c:"Breakfast",d:"Smooth espresso with steamed milk."},
+{id:31,n:"Melange",e:"☕",img:"Imgs/melange.jpg",p:3,c:"Breakfast",d:"Viennese-style coffee with frothed milk."},
+{id:32,n:"Tea (Various)",e:"🍵",img:"Imgs/varioustea.webp",p:2,c:"Breakfast",d:"Hot tea, choose from different varieties."},
+{id:33,n:"Tea (Milk & Milo)",e:"🥛",img:"Imgs/milotea.jpg",p:2.5,c:"Breakfast",d:"Creamy tea with milk and Milo."}, // FILE MISSING
+{id:34,n:"Meat Pie",e:"🥧",img:"Imgs/meatpie.webp",p:4.5,c:"Breakfast",d:"Flaky pastry filled with spiced minced meat."},
+{id:35,n:"Chicken Pie",e:"🥧",img:"Imgs/chickenpie.jpeg",p:4.5,c:"Breakfast",d:"Flaky pastry filled with seasoned chicken."},
+{id:36,n:"Sandwich",e:"🥪",img:"Imgs/sandwich.jpg",p:3,c:"Breakfast",d:"Freshly made sandwich."},
+{id:37,n:"Croissant",e:"🥐",img:"Imgs/croissant.webp",p:3,c:"Breakfast",d:"Buttery, golden croissant."},
+{id:38,n:"Egg Roll",e:"🥚",img:"Imgs/eggroll.jpg",p:4.5,c:"Breakfast",d:"Boiled egg wrapped in soft golden dough."}, // FILE MISSING
+{id:39,n:"Fish Roll",e:"🐟",img:"Imgs/fishroll.png",p:3,c:"Breakfast",d:"Crispy pastry filled with seasoned fish."},
 
 // Brunch
-{id:40,n:"Soak Garri",e:"🥣",img:"Images/soakgarri.jpg",p:2,c:"Brunch",d:"Cold garri soaked in water and milk."},
-{id:41,n:"Nuts",e:"🥜",img:"Images/nuts.jpg",p:1,c:"Brunch",d:"Add-on for your garri."},
-{id:42,n:"Kokos",e:"🥥",img:"Images/kokos.jpg",p:1.5,c:"Brunch",d:"Fresh coconut add-on for your garri."},
-{id:43,n:"Kulikuli",e:"🍘",img:"Images/kulikuli.jpg",p:1,c:"Brunch",d:"Crunchy groundnut snack add-on."},
+{id:40,n:"Soak Garri",e:"🥣",img:"Imgs/garri.jpg",p:2,c:"Brunch",d:"Cold garri soaked in water and milk."},
+{id:41,n:"Nuts",e:"🥜",img:"Imgs/nuts.jpg",p:1,c:"Brunch",d:"Add-on for your garri."}, // FILE MISSING
+{id:42,n:"Kokos",e:"🥥",img:"Imgs/kokos.jpg",p:1.5,c:"Brunch",d:"Fresh coconut add-on for your garri."}, // FILE MISSING
+{id:43,n:"Kulikuli",e:"🍘",img:"Imgs/kulikuli.jpg",p:1,c:"Brunch",d:"Crunchy groundnut snack add-on."},
 
-// Wine (Wein)
-{id:44,n:"Red Wine",e:"🍷",img:"Images/redwine.jpg",p:15,c:"Wine",d:"Rich, smooth red wine."},
-{id:45,n:"White Wine",e:"🥂",img:"Images/whitewine.jpg",p:15,c:"Wine",d:"Crisp, refreshing white wine."},
-{id:46,n:"Sparkling",e:"🍾",img:"Images/sparkling.jpg",p:18,c:"Wine",d:"Light, bubbly sparkling wine."},
-{id:47,n:"Prosecco",e:"🥂",img:"Images/prosecco.jpg",p:18,c:"Wine",d:"Italian sparkling wine."},
+// Wine
+{id:44,n:"Red Wine",e:"🍷",img:"Imgs/redwine.jpg",p:15,c:"Wine",d:"Rich, smooth red wine."}, // FILE MISSING
+{id:45,n:"White Wine",e:"🥂",img:"Imgs/whitewine.jpg",p:15,c:"Wine",d:"Crisp, refreshing white wine."},
+{id:46,n:"Sparkling",e:"🍾",img:"Imgs/sparkling.jpg",p:18,c:"Wine",d:"Light, bubbly sparkling wine."},
+{id:47,n:"Prosecco",e:"🥂",img:"Imgs/prosecco.jpg",p:18,c:"Wine",d:"Italian sparkling wine."},
 
 // Alcohol & Beer
-{id:48,n:"Hennessy",e:"🥃",img:"Images/hennessy.jpg",p:70,c:"Alcohol & Beer",d:"Premium cognac, per bottle."},
-{id:49,n:"Johnnie Walker",e:"🥃",img:"Images/jwalker.jpg",p:60,c:"Alcohol & Beer",d:"Blended Scotch whisky, per bottle."},
-{id:50,n:"Vodka",e:"🍸",img:"Images/vodka.jpg",p:70,c:"Alcohol & Beer",d:"Smooth, clear vodka, per bottle."},
-{id:51,n:"Tequila",e:"🍹",img:"Images/tequila.jpg",p:70,c:"Alcohol & Beer",d:"Classic tequila, per bottle."},
-{id:52,n:"Campari",e:"🍹",img:"Images/campari.jpg",p:40,c:"Alcohol & Beer",d:"Bold, bittersweet Italian aperitif."},
-{id:53,n:"Bombay Gin",e:"🍸",img:"Images/gin.jpg",p:60,c:"Alcohol & Beer",d:"Crisp, botanical gin, per bottle."},
-{id:54,n:"Aperol",e:"🍹",img:"Images/aperol.jpg",p:20,c:"Alcohol & Beer",d:"Light, orange-flavoured aperitif."},
-{id:55,n:"Small Stout",e:"🍺",img:"Images/stout.jpg",p:4,c:"Alcohol & Beer",d:"Dark, full-bodied stout."},
-{id:56,n:"Stiegl",e:"🍺",img:"Images/stiegl.jpg",p:3.5,c:"Alcohol & Beer",d:"Austrian lager."},
-{id:57,n:"Windhoek Burger",e:"🍺",img:"Images/wburger.jpg",p:3.5,c:"Alcohol & Beer",d:"Chilled beer."},
-{id:58,n:"Heineken",e:"🍺",img:"Images/heineken.jpg",p:3.5,c:"Alcohol & Beer",d:"Classic Dutch lager."},
-{id:59,n:"Schwechater",e:"🍺",img:"Images/schwechater.jpg",p:3.5,c:"Alcohol & Beer",d:"Smooth Austrian beer."},
+{id:48,n:"Hennessy",e:"🥃",img:"Imgs/hennessy.jpg",p:70,c:"Alcohol & Beer",d:"Premium cognac, per bottle."},
+{id:49,n:"Johnnie Walker",e:"🥃",img:"Imgs/johniewalker.webp",p:60,c:"Alcohol & Beer",d:"Blended Scotch whisky, per bottle."},
+{id:50,n:"Vodka",e:"🍸",img:"Imgs/vodka.jpeg",p:70,c:"Alcohol & Beer",d:"Smooth, clear vodka, per bottle."},
+{id:51,n:"Tequila",e:"🍹",img:"Imgs/tequila.jpg",p:70,c:"Alcohol & Beer",d:"Classic tequila, per bottle."},
+{id:52,n:"Campari",e:"🍹",img:"Imgs/campari.jpg",p:40,c:"Alcohol & Beer",d:"Bold, bittersweet Italian aperitif."},
+{id:53,n:"Bombay Gin",e:"🍸",img:"Imgs/Bombay-Sapphire.jpg",p:60,c:"Alcohol & Beer",d:"Crisp, botanical gin, per bottle."}, // CHECK FILENAME
+{id:54,n:"Aperol",e:"🍹",img:"Imgs/aperol.jpg",p:20,c:"Alcohol & Beer",d:"Light, orange-flavoured aperitif."},
+{id:55,n:"Small Stout",e:"🍺",img:"Imgs/stout.jpg",p:4,c:"Alcohol & Beer",d:"Dark, full-bodied stout."}, // FILE MISSING
+{id:56,n:"Stiegl",e:"🍺",img:"Imgs/stiegl.jpg",p:3.5,c:"Alcohol & Beer",d:"Austrian lager."},
+{id:57,n:"Windhoek Burger",e:"🍺",img:"Imgs/windhoek.jpg",p:3.5,c:"Alcohol & Beer",d:"Chilled beer."},
+{id:58,n:"Heineken",e:"🍺",img:"Imgs/heineken.jpg",p:3.5,c:"Alcohol & Beer",d:"Classic Dutch lager."},
+{id:59,n:"Schwechater",e:"🍺",img:"Imgs/schwechater.jpg",p:3.5,c:"Alcohol & Beer",d:"Smooth Austrian beer."},
 
-// Grill (Spiesen)
-{id:60,n:"Kilishi",e:"🥩",img:"Images/kilishi.jpg",p:5,c:"Grill",d:"Spicy, dried and grilled beef jerky."},
-{id:61,n:"Turkey",e:"🍗",img:"Images/turkey.jpg",p:6,c:"Grill",d:"Grilled turkey, peppered and juicy."},
-{id:62,n:"Gizzard",e:"🍢",img:"Images/gizzard.jpg",p:4.5,c:"Grill",d:"Peppered chicken gizzard skewers."},
-{id:63,n:"Cow Leg",e:"🍖",img:"Images/cowleg.jpg",p:7,c:"Grill",d:"Slow-cooked, spiced cow leg."},
-{id:64,n:"Cow Head",e:"🍖",img:"Images/cowhead.jpg",p:7,c:"Grill",d:"Tender, peppered cow head."},
-{id:65,n:"Goat Meat",e:"🍖",img:"Images/goatmeat.jpg",p:7,c:"Grill",d:"Spicy grilled goat meat."},
+// Grill
+{id:60,n:"Kilishi",e:"🥩",img:"Imgs/kilishi.png",p:5,c:"Grill",d:"Spicy, dried and grilled beef jerky."},
+{id:61,n:"Turkey",e:"🍗",img:"Imgs/turkey.jpg",p:6,c:"Grill",d:"Grilled turkey, peppered and juicy."}, // FILE MISSING
+{id:62,n:"Gizzard",e:"🍢",img:"Imgs/gizzard.webp",p:4.5,c:"Grill",d:"Peppered chicken gizzard skewers."},
+{id:63,n:"Cow Leg",e:"🍖",img:"Imgs/cowleg.jpg",p:7,c:"Grill",d:"Slow-cooked, spiced cow leg."}, // FILE MISSING
+{id:64,n:"Cow Head",e:"🍖",img:"Imgs/cowhead.jpg",p:7,c:"Grill",d:"Tender, peppered cow head."}, // FILE MISSING
+{id:65,n:"Goat Meat",e:"🍖",img:"Imgs/goatmeat.jpg",p:7,c:"Grill",d:"Spicy grilled goat meat."}, // FILE MISSING
 {id:66,n:"Jollof Bowl",e:"🍛",img:"Imgs/jollofrice.png",p:9.9,c:"Grill",d:"Smoky jollof rice served in a bowl."},
-{id:67,n:"Chicken Wings",e:"🍗",img:"Images/chickenwings.jpg",p:5,c:"Grill",d:"Crispy, seasoned chicken wings."},
+{id:67,n:"Chicken Wings",e:"🍗",img:"Imgs/wings.jpg",p:5,c:"Grill",d:"Crispy, seasoned chicken wings."},
 
 // Shots
-{id:68,n:"Vodka Shot",e:"🥃",img:"Images/vodkashot.jpg",p:3,c:"Shots",d:"A single shot of vodka."},
-{id:69,n:"Jack Daniel's Shot",e:"🥃",img:"Images/jdshot.jpg",p:3,c:"Shots",d:"A single shot of Jack Daniel's."},
-{id:70,n:"Johnnie Walker Shot",e:"🥃",img:"Images/jwshot.jpg",p:3,c:"Shots",d:"A single shot of Johnnie Walker."},
-];
+{id:68,n:"Vodka Shot",e:"🥃",img:"Imgs/vodka.jpeg",p:3,c:"Shots",d:"A single shot of vodka."},
+{id:69,n:"Jack Daniel's Shot",e:"🥃",img:"Imgs/jackdaniels.jpg",p:3,c:"Shots",d:"A single shot of Jack Daniel's."}, // FILE MISSING
+{id:70,n:"Johnnie Walker Shot",e:"🥃",img:"Imgs/johniewalker.webp",p:3,c:"Shots",d:"A single shot of Johnnie Walker."},
+  
+  ];
 // ======================
 const $=id=>document.getElementById(id);
 const fmt=n=>"€"+n.toLocaleString("en-NG");
