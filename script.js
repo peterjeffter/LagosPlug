@@ -1,9 +1,8 @@
 // ===== EDIT THESE =====
-const WHATSAPP = "2347045670173";   // your WhatsApp number, country code first, no + or spaces
+const CHECKOUT_URL = "https://your-link-here.com";   // where the Checkout button sends people
 const PHONE_DISPLAY = "+267-667-6547";
 const ORDERS_URL = "google.com";   // Google Apps Script web app URL (used by the contact form)
-const JUICES = ["Orange Juice","Apple Juice","Tigernut Drink","Watermelon Juice","Pineapple Juice","Zobo"];
-const CHICKEN = ["Grilled chicken","Fried chicken"];
+
 // img = photo file inside the "images" folder. Remove or leave out img to show the emoji instead.
 const MENU = [
   {id:20,n:"Jollof Rice",e:"🍛",img:"Imgs/jollofrice.png",p:30,c:"Main",d:"Smoky party-style jollof rice, served hot."},
@@ -91,8 +90,7 @@ function saveCart(){
 }
 
 $("ph").textContent=PHONE_DISPLAY;
-$("c-call").href="tel:+"+WHATSAPP;
-$("c-wa").href="https://wa.me/"+WHATSAPP;
+$("c-call").href="tel:+"+PHONE_DISPLAY.replace(/\D/g,"");
 
 function openM(k){
   if(k==="cart")renderCart();
@@ -170,25 +168,15 @@ function renderCart(){
   <div class="qty"><button onclick="chg('${c.key}',-1)" ${c.q<=1?"disabled":""} aria-label="Decrease">−</button><b>${c.q}</b><button onclick="chg('${c.key}',1)" aria-label="Increase">+</button></div>
   <button class="rm" onclick="removeItem('${c.key}')" aria-label="Remove ${c.name}">×</button></div>`).join("")+
   `<div class="total"><span>Total</span><span>${fmt(total())}</span></div>
-   <button class="btn" style="width:100%" onclick="closeM('cart');$('ck-total').textContent=fmt(total());openM('checkout')">Checkout</button>`;
+   <button class="btn" style="width:100%" onclick="checkout()">Checkout</button>`;
 }
-function placeOrder(){
-  const name=$("f-name").value.trim(),phone=$("f-phone").value.trim(),addr=$("f-addr").value.trim(),note=$("f-note").value.trim();
-  if(!name||!phone||!addr){$("err").style.display="block";return}
-  $("err").style.display="none";
-  const id="SC"+Math.floor(1000+Math.random()*9000);
-  const lines=cart.map(c=>`• ${c.q} x ${c.name}${c.v?" ("+c.v+")":""} - ${fmt(c.p*c.q)}`);
-  const msg=`*New Order ${id}*\n\n${lines.join("\n")}\n\n*Total: ${fmt(total())}*\nPayment: On delivery\n\nName: ${name}\nPhone: ${phone}\nAddress: ${addr}${note?"\nNote: "+note:""}`;
-  $("oid").textContent="#"+id;
-  $("sum").innerHTML=lines.join("<br>")+`<br><b>Total: ${fmt(total())} (pay on delivery)</b>`;
-  $("wa").href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-  closeM("checkout");openM("done");
+
+// ===== Checkout: send people to your link =====
+function checkout(){
+  if(!cart.length)return;
+  window.location.href=CHECKOUT_URL;
 }
-function finish(){
-  cart=[];upd();closeM("done");
-  ["f-name","f-phone","f-addr","f-note"].forEach(i=>$(i).value="");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
+
 renderTabs();renderMenu();upd();
 
 // ===== Hero slideshow =====
