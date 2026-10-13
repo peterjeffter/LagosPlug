@@ -10,6 +10,9 @@
   --t1:#f9e1e3;--t2:#faecc8;--t3:#e2efe5;--t4:#fbe3d5;
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:"Inter","Segoe UI",system-ui,sans-serif;
+  
+color-scheme:light;
+box-sizing:border-box;...
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
 }
 
