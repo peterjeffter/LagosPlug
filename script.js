@@ -1,5 +1,5 @@
 // ===== EDIT THESE =====
-const CHECKOUT_URL = "https://your-link-here.com";   // where the Checkout button sends people
+const CHECKOUT_URL = "https://peckchow.com";   // where the Checkout button sends people
 const PHONE_DISPLAY = "+267-667-6547";
 const ORDERS_URL = "google.com";   // Google Apps Script web app URL (used by the contact form)
 
