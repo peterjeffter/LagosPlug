@@ -5,7 +5,11 @@ const ORDERS_URL = "google.com";   // Google Apps Script web app URL (used by th
 
 // img = photo file inside the "images" folder. Remove or leave out img to show the emoji instead.
 const MENU = [
-  // Earlier jollof/soup items
+  // Lagos Plug Cafe - menu items (prices in EUR, stored as plain numbers)
+// Paste these inside your array in script.js, after your existing items.
+// Display price with: "€" + item.p.toFixed(2)
+
+// Jollof & soups (placeholder prices)
 {id:20,n:"Jollof Rice",e:"🍛",img:"Imgs/jollofrice.png",p:6.5,c:"Fast Food",d:"Smoky party-style jollof rice, served hot."},
 {id:21,n:"Jollof & Chicken",e:"🍗",img:"Imgs/jollofandchicken.png",p:9.5,c:"Fast Food",d:"Smoky jollof rice with a juicy piece of fried chicken."},
 {id:22,n:"Jollof & Beef",e:"🥩",img:"Imgs/jollofandbeef.png",p:9.5,c:"Fast Food",d:"Smoky jollof rice with tender, spiced beef."},
@@ -14,7 +18,7 @@ const MENU = [
 {id:25,n:"Egusi & Fufu",e:"🍲",img:"Imgs/egusinfufu.jpeg",p:9.5,c:"Fast Food",d:"Rich melon seed soup with smooth, soft fufu."},
 {id:26,n:"Okro Soup",e:"🥣",img:"Imgs/okro.jpeg",p:8.5,c:"Fast Food",d:"Thick, flavorful okro soup with assorted meat and fish."},
 
-// Breakfast
+// Breakfast (Frühstück)
 {id:30,n:"Cafe Latte",e:"☕",img:"Imgs/cafelatte.png",p:3,c:"Breakfast",d:"Smooth espresso with steamed milk."},
 {id:31,n:"Melange",e:"☕",img:"Imgs/melange.jpg",p:3,c:"Breakfast",d:"Viennese-style coffee with frothed milk."},
 {id:32,n:"Tea (Various)",e:"🍵",img:"Imgs/varioustea.webp",p:2,c:"Breakfast",d:"Hot tea, choose from different varieties."},
@@ -23,17 +27,17 @@ const MENU = [
 {id:35,n:"Chicken Pie",e:"🥧",img:"Imgs/chickenpie.jpeg",p:4.5,c:"Breakfast",d:"Flaky pastry filled with seasoned chicken."},
 {id:36,n:"Sandwich",e:"🥪",img:"Imgs/sandwich.jpg",p:3,c:"Breakfast",d:"Freshly made sandwich."},
 {id:37,n:"Croissant",e:"🥐",img:"Imgs/croissant.webp",p:3,c:"Breakfast",d:"Buttery, golden croissant."},
-{id:38,n:"Egg Roll",e:"🥚",img:"Imgs/eggroll.jpg",p:4.5,c:"Breakfast",d:"Boiled egg wrapped in soft golden dough."}, // FILE MISSING
+{id:38,n:"Egg Roll",e:"🥚",img:"Imgs/eggroll.jpg",p:4.5,c:"Breakfast",d:"Boiled egg wrapped in soft golden dough."},
 {id:39,n:"Fish Roll",e:"🐟",img:"Imgs/fishroll.png",p:3,c:"Breakfast",d:"Crispy pastry filled with seasoned fish."},
 
 // Brunch
 {id:40,n:"Soak Garri",e:"🥣",img:"Imgs/garri.jpg",p:2,c:"Brunch",d:"Cold garri soaked in water and milk."},
-{id:41,n:"Nuts",e:"🥜",img:"Imgs/nuts.jpg",p:1,c:"Brunch",d:"Add-on for your garri."}, // FILE MISSING
-{id:42,n:"Kokos",e:"🥥",img:"Imgs/kokos.jpg",p:1.5,c:"Brunch",d:"Fresh coconut add-on for your garri."}, // FILE MISSING
+{id:41,n:"Nuts",e:"🥜",img:"Imgs/groundnut.jpg",p:1,c:"Brunch",d:"Add-on for your garri."},
+{id:42,n:"Kokos",e:"🥥",img:"Imgs/cocos.jpg",p:1.5,c:"Brunch",d:"Fresh coconut add-on for your garri."},
 {id:43,n:"Kulikuli",e:"🍘",img:"Imgs/kulikuli.jpg",p:1,c:"Brunch",d:"Crunchy groundnut snack add-on."},
 
-// Wine
-{id:44,n:"Red Wine",e:"🍷",img:"Imgs/redwine.jpg",p:15,c:"Wine",d:"Rich, smooth red wine."}, // FILE MISSING
+// Wine (Wein)
+{id:44,n:"Red Wine",e:"🍷",img:"Imgs/redwine.jpg",p:15,c:"Wine",d:"Rich, smooth red wine."},
 {id:45,n:"White Wine",e:"🥂",img:"Imgs/whitewine.jpg",p:15,c:"Wine",d:"Crisp, refreshing white wine."},
 {id:46,n:"Sparkling",e:"🍾",img:"Imgs/sparkling.jpg",p:18,c:"Wine",d:"Light, bubbly sparkling wine."},
 {id:47,n:"Prosecco",e:"🥂",img:"Imgs/prosecco.jpg",p:18,c:"Wine",d:"Italian sparkling wine."},
@@ -46,19 +50,19 @@ const MENU = [
 {id:52,n:"Campari",e:"🍹",img:"Imgs/campari.jpg",p:40,c:"Alcohol & Beer",d:"Bold, bittersweet Italian aperitif."},
 {id:53,n:"Bombay Gin",e:"🍸",img:"Imgs/Bombay-Sapphire.jpg",p:60,c:"Alcohol & Beer",d:"Crisp, botanical gin, per bottle."}, // CHECK FILENAME
 {id:54,n:"Aperol",e:"🍹",img:"Imgs/aperol.jpg",p:20,c:"Alcohol & Beer",d:"Light, orange-flavoured aperitif."},
-{id:55,n:"Small Stout",e:"🍺",img:"Imgs/stout.jpg",p:4,c:"Alcohol & Beer",d:"Dark, full-bodied stout."}, // FILE MISSING
+{id:55,n:"Small Stout",e:"🍺",img:"Imgs/smallstout.jpg",p:4,c:"Alcohol & Beer",d:"Dark, full-bodied stout."},
 {id:56,n:"Stiegl",e:"🍺",img:"Imgs/stiegl.jpg",p:3.5,c:"Alcohol & Beer",d:"Austrian lager."},
 {id:57,n:"Windhoek Burger",e:"🍺",img:"Imgs/windhoek.jpg",p:3.5,c:"Alcohol & Beer",d:"Chilled beer."},
 {id:58,n:"Heineken",e:"🍺",img:"Imgs/heineken.jpg",p:3.5,c:"Alcohol & Beer",d:"Classic Dutch lager."},
 {id:59,n:"Schwechater",e:"🍺",img:"Imgs/schwechater.jpg",p:3.5,c:"Alcohol & Beer",d:"Smooth Austrian beer."},
 
-// Grill
+// Grill (Spiesen)
 {id:60,n:"Kilishi",e:"🥩",img:"Imgs/kilishi.png",p:5,c:"Grill",d:"Spicy, dried and grilled beef jerky."},
-{id:61,n:"Turkey",e:"🍗",img:"Imgs/turkey.jpg",p:6,c:"Grill",d:"Grilled turkey, peppered and juicy."}, // FILE MISSING
+{id:61,n:"Turkey",e:"🍗",img:"Imgs/turkey.jpg",p:6,c:"Grill",d:"Grilled turkey, peppered and juicy."},
 {id:62,n:"Gizzard",e:"🍢",img:"Imgs/gizzard.webp",p:4.5,c:"Grill",d:"Peppered chicken gizzard skewers."},
-{id:63,n:"Cow Leg",e:"🍖",img:"Imgs/cowleg.jpg",p:7,c:"Grill",d:"Slow-cooked, spiced cow leg."}, // FILE MISSING
-{id:64,n:"Cow Head",e:"🍖",img:"Imgs/cowhead.jpg",p:7,c:"Grill",d:"Tender, peppered cow head."}, // FILE MISSING
-{id:65,n:"Goat Meat",e:"🍖",img:"Imgs/goatmeat.jpg",p:7,c:"Grill",d:"Spicy grilled goat meat."}, // FILE MISSING
+{id:63,n:"Cow Leg",e:"🍖",img:"Imgs/cowleg.jpg",p:7,c:"Grill",d:"Slow-cooked, spiced cow leg."},
+{id:64,n:"Cow Head",e:"🍖",img:"Imgs/cowhead.png",p:7,c:"Grill",d:"Tender, peppered cow head."},
+{id:65,n:"Goat Meat",e:"🍖",img:"Imgs/goatmeat.jpg",p:7,c:"Grill",d:"Spicy grilled goat meat."},
 {id:66,n:"Jollof Bowl",e:"🍛",img:"Imgs/jollofrice.png",p:9.9,c:"Grill",d:"Smoky jollof rice served in a bowl."},
 {id:67,n:"Chicken Wings",e:"🍗",img:"Imgs/wings.jpg",p:5,c:"Grill",d:"Crispy, seasoned chicken wings."},
 
@@ -66,7 +70,6 @@ const MENU = [
 {id:68,n:"Vodka Shot",e:"🥃",img:"Imgs/vodka.jpeg",p:3,c:"Shots",d:"A single shot of vodka."},
 {id:69,n:"Jack Daniel's Shot",e:"🥃",img:"Imgs/jackdaniels.jpg",p:3,c:"Shots",d:"A single shot of Jack Daniel's."}, // FILE MISSING
 {id:70,n:"Johnnie Walker Shot",e:"🥃",img:"Imgs/johniewalker.webp",p:3,c:"Shots",d:"A single shot of Johnnie Walker."},
-  
   ];
 // ======================
 const $=id=>document.getElementById(id);
